@@ -22,12 +22,12 @@ RUN sudo apt install openjdk-8-jdk -y
 
 RUN export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
-RUN wget https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop3.tgz \
-    && tar xvf spark-${SPARK_VERSION}-bin-hadoop3.tgz \
-    && sudo mv spark-${SPARK_VERSION}-bin-hadoop3 /opt/spark
+RUN wget https://dlcdn.apache.org/spark/spark-\${SPARK_VERSION}/spark-\${SPARK_VERSION}-bin-hadoop3.tgz \
+    && tar xvf spark-\${SPARK_VERSION}-bin-hadoop3.tgz \
+    && sudo mv spark-\${SPARK_VERSION}-bin-hadoop3 /opt/spark
 
 RUN export SPARK_HOME=/opt/spark
-RUN export PATH=$PATH:$SPARK_HOME/bin
+RUN export PATH=\$PATH:\$SPARK_HOME/bin
 
 EXPOSE 8080 7077 6066
 
