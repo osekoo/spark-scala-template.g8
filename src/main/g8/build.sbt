@@ -1,4 +1,5 @@
-name := sys.env.get("APP_NAME").getOrElse("$name;format=\"normalize\"$") // the project's name
+
+name := sys.env.get("APP_NAME").getOrElse("$name$") // the project's name
 version := sys.env.get("APP_VERSION").getOrElse("0.1") // the application version
 scalaVersion := sys.env.get("SCALA_FULL_VERSION").getOrElse("2.12.18") // version of Scala we want to use (this should be in line with the version of Spark framework)
 organization := "com.osekoo.dev"
