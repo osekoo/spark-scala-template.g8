@@ -1,9 +1,9 @@
 version: '3.5'
 
 services:
-  spark-master:
+  $name;format="normalize"$-spark-master:
     image: osekoo/spark:3.5.0
-    container_name: spark-master
+    container_name: $name;format="normalize"$-spark-master
     build:
       context: ./
     environment:
@@ -12,7 +12,7 @@ services:
       - '\${SPARK_MASTER_PORT:-7077}:\${SPARK_MASTER_PORT:-7077}'
       - '\${SPARK_WEBUI_PORT:-8080}:\${SPARK_WEBUI_PORT:-8080}'
 
-  spark-worker:
+  $name;format="normalize"$-spark-worker:
     image: osekoo/spark:3.5.0
     env_file:
       - .env
@@ -21,11 +21,11 @@ services:
     deploy:
       replicas: \${SPARK_WORKERS:-2 }
     depends_on:
-      - spark-master
+      - $name;format="normalize"$-spark-master
 
-  spark-submit:
+  $name;format="normalize"$-spark-submit:
     image: osekoo/spark:3.5.0
-    container_name: spark-submit
+    container_name: $name;format="normalize"$-spark-submit
     env_file:
       - .env
     environment:
@@ -35,4 +35,4 @@ services:
     volumes:
       - "./:/app"
     depends_on:
-      - spark-worker
+      - $name;format="normalize"$-spark-worker

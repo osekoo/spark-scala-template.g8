@@ -1,7 +1,7 @@
 FROM docker.io/ubuntu:22.04
 
 ENV SPARK_MODE="master" \
-    SPARK_MASTER_URL="spark://spark-master:7077" \
+    SPARK_MASTER_URL="spark://$name;format="normalize"$-spark-master:7077" \
     SPARK_WORKER_INSTANCES=1 \
     SPARK_NO_DAEMONIZE=true
 

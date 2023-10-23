@@ -1,5 +1,5 @@
 object Main {
   def main(args: Array[String]): Unit = {
-    println("Main class...")
+    println("Main class of `$name$`")
   }
 }
