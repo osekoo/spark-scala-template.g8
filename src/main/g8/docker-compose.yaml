@@ -12,7 +12,7 @@ services:
       - '\${SPARK_MASTER_PORT:-7077}:\${SPARK_MASTER_PORT:-7077}'
       - '\${SPARK_WEBUI_PORT:-8080}:\${SPARK_WEBUI_PORT:-8080}'
 
-  $name;format="normalize"$-spark-worker:
+  spark-worker:
     image: osekoo/spark:3.5.0
     env_file:
       - .env
@@ -35,4 +35,4 @@ services:
     volumes:
       - "./:/app"
     depends_on:
-      - $name;format="normalize"$-spark-worker
+      - spark-worker
