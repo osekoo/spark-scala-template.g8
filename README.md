@@ -15,3 +15,6 @@ The following frameworks and software are required:
 - [sbt](https://www.scala-sbt.org/download.html)
 - [docker](https://docs.docker.com/engine/install/)
 - [docker-compose](https://docs.docker.com/compose/install/) 
+
+## Notes
+The spark cluster is created using [osekoo/spark](https://github.com/osekoo/spark-docker-image) docker image.
