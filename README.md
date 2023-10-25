@@ -5,7 +5,7 @@ Execute the following command to create a new spark cluster project with scala:
 
 
 ```shell
-sbt new spark-scala-template.g8
+sbt new osekoo/spark-scala-template.g8
 cd <project-name>
 docker compose up
 ```
