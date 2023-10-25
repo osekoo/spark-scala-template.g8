@@ -5,7 +5,7 @@ services:
     image: ghcr.io/osekoo/spark:$spark_version$
     container_name: $name;format="normalize"$-spark-master
     build:
-      context: ./
+      context: ../../..
     environment:
       - SPARK_MODE=master
     ports:
