@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   $name;format="normalize"$-spark-master:
-    image: ghcr.io/osekoo/spark:$spark_version
+    image: ghcr.io/osekoo/spark:$spark_version$
     container_name: $name;format="normalize"$-spark-master
     build:
       context: ./
@@ -13,7 +13,7 @@ services:
       - '\${SPARK_WEBUI_PORT:-8080}:\${SPARK_WEBUI_PORT:-8080}'
 
   spark-worker:
-    image: ghcr.io/osekoo/spark:$spark_version
+    image: ghcr.io/osekoo/spark:$spark_version$
     env_file:
       - .env
     environment:
@@ -24,7 +24,7 @@ services:
       - $name;format="normalize"$-spark-master
 
   $name;format="normalize"$-spark-client:
-    image: ghcr.io/osekoo/spark:$spark_version
+    image: ghcr.io/osekoo/spark:$spark_version$
     container_name: $name;format="normalize"$-spark-client
     env_file:
       - .env
