@@ -18,7 +18,7 @@ object Main {
     logger.info(s"master url: \$masterUrl")
     logger.info("Initializing spark context...")
     val spark: SparkSession = SparkSession.builder()
-      .appName(s"Hello Spark")
+      .appName("$name$")
       .master(masterUrl)
       .getOrCreate()
 
