@@ -5,7 +5,7 @@ object Main {
   Logger.getLogger("org").setLevel(Level.OFF)
   Logger.getLogger("akka").setLevel(Level.OFF)
 
-  @transient private lazy val logger: Logger = Logger.getLogger("$")
+  @transient private lazy val logger: Logger = Logger.getLogger("\$")
 
   def main(args: Array[String]): Unit = {
     logger.info("Running `$name$`...")
