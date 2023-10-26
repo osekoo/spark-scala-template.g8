@@ -9,7 +9,7 @@ scalaVersion := sys.env.get("SCALA_VERSION").getOrElse("$scala_version$") // ver
 crossTarget := baseDirectory.value
 
 artifactName := { (sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
-  sys.env.get("APP_PACKAGE").getOrElse("$name;format="normalize"$-$app_version$.jar")
+  sys.env.get("APP_PACKAGE").getOrElse("bin/$name;format="normalize"$-$app_version$.jar")
 }
 
 val sparkVersion = sys.env.get("SPARK_VERSION").getOrElse("$spark_version$")
