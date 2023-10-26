@@ -31,6 +31,6 @@ object Main {
     // Saving people's name into names.csv
     df.select("name").write
       .mode(SaveMode.Overwrite)
-      .parquet("names.parquet")*/
+      .csv("names.csv")*/
   }
 }
