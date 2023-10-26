@@ -12,7 +12,7 @@ object Main {
     if (masterUrl == null) {
       masterUrl = "local[*]"
     }
-    println(s"master url: $masterUrl")
+    println(s"master url: \$masterUrl")
     val spark: SparkSession = SparkSession.builder()
       .appName(s"Hello Spark")
       .master(masterUrl)
