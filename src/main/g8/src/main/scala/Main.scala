@@ -4,15 +4,19 @@ import org.apache.spark.sql.{SaveMode, SparkSession}
 object Main {
   Logger.getLogger("org").setLevel(Level.OFF)
   Logger.getLogger("akka").setLevel(Level.OFF)
+
+  @transient private lazy val logger: Logger = Logger.getLogger("$")
+
   def main(args: Array[String]): Unit = {
-    println("Running `$name$`...")
+    logger.info("Running `$name$`...")
 /*
     // Initializing Spark session
  var masterUrl = System.getenv("SPARK_MASTER_URL")
     if (masterUrl == null) {
       masterUrl = "local[*]"
     }
-    println(s"master url: \$masterUrl")
+    logger.info(s"master url: \$masterUrl")
+    logger.info("Initializing spark context...")
     val spark: SparkSession = SparkSession.builder()
       .appName(s"Hello Spark")
       .master(masterUrl)
