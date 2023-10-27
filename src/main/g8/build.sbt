@@ -6,10 +6,10 @@ version := sys.env.get("APP_VERSION").getOrElse("$app_version$") // the applicat
 
 scalaVersion := sys.env.get("SCALA_VERSION").getOrElse("$scala_version$") // version of Scala we want to use (this should be in line with the version of Spark framework)
 
-crossTarget := baseDirectory.value / bin
+crossTarget := baseDirectory.value / "bin"
 
 artifactName := { (sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
-  sys.env.get("APP_PACKAGE").getOrElse("bin/$name;format="normalize"$-$app_version$.jar")
+  $name;format="normalize"$-$app_version$.jar"
 }
 
 val sparkVersion = sys.env.get("SPARK_VERSION").getOrElse("$spark_version$")
