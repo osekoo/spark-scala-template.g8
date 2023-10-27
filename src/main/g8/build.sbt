@@ -1,4 +1,4 @@
-organization := sys.env.get("APP_ORGANIZATION").getOrElse("org.compnay.dev")
+organization := sys.env.get("APP_ORGANIZATION").getOrElse("org.company.dev")
 
 name := sys.env.get("APP_NAME").getOrElse("$name;format="normalize"$") // the project's name
 
@@ -6,7 +6,7 @@ version := sys.env.get("APP_VERSION").getOrElse("$app_version$") // the applicat
 
 scalaVersion := sys.env.get("SCALA_VERSION").getOrElse("$scala_version$") // version of Scala we want to use (this should be in line with the version of Spark framework)
 
-crossTarget := baseDirectory.value + "/bin"
+crossTarget := baseDirectory.value / "target"
 
 artifactName := { (sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
   "$name;format="normalize"$-$app_version$.jar"
